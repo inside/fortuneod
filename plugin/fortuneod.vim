@@ -1,3 +1,19 @@
+" File:        fortuneod.vim
+" Description: "Fortune on demand" creates a window on top of all others
+"              with the result of the unix fortune command.
+"
+"              <Leader>F invokes the plugin if it is not already mapped.
+"              If you don't wan't <Leader>F, create your prefered map, for
+"              example:
+"
+"              noremap ,f <Plug>FortuneodStart
+"
+"              Pressing n in the Fortune window will show another fortune.
+"
+" Maintainer:  Yann Thomas-Gérard <inside at gmail dot com>
+" Version:     1.0
+" License:     This file is placed in the public domain.
+
 " Load guard
 if exists("g:loaded_fortuneod")
     finish
