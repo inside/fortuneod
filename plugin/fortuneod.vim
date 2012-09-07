@@ -1,14 +1,13 @@
 " File:        fortuneod.vim
-" Description: "Fortune on demand" creates a window on top of all others
-"              with the result of the unix fortune command.
 "
+" Description: 'Fortune on demand' creates a window on top of all others with
+"              the result of the unix fortune command.
 "              <Leader>F invokes the plugin if it is not already mapped.
-"              If you don't wan't <Leader>F, create your prefered map, for
-"              example:
+"              You can create your prefered map. For example:
 "
-"              noremap ,f <Plug>FortuneodStart
+"              map ,f <Plug>FortuneodStart
 "
-"              Pressing n in the Fortune window will show another fortune.
+"              Pressing n in the Fortune window shows another fortune.
 "
 " Maintainer:  Yann Thomas-Gérard <inside at gmail dot com>
 " Version:     1.0
@@ -68,7 +67,21 @@ function s:CreateWindow(bufName)
 endfunction
 
 function s:GetContent()
+    let l:content = []
     let l:content = split(system('fortune'), '\n')
+
+    " exit codes detail: http://tldp.org/LDP/abs/html/exitcodes.html
+    if v:shell_error != 0
+        let l:content =  ["*Warning*", ""]
+
+        if v:shell_error == 127
+            let l:content += ["The fortune command was not found."]
+            let l:content += ["You should probably install it with the command:", ""]
+            let l:content += ["$ aptitude install fortune"]
+        else
+            let l:content += ["Ther was an error (" . v:shell_error . ") while executing the fortune unix command."]
+        endif
+    endif
 
     return l:content
 endfunction
