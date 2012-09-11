@@ -1,13 +1,7 @@
 " File:        fortuneod.vim
 "
-" Description: 'Fortune on demand' creates a window on top of all others with
-"              the result of the unix fortune command.
-"              <Leader>F invokes the plugin if it is not already mapped.
-"              You can create your prefered map. For example:
-"
-"              map ,f <Plug>FortuneodStart
-"
-"              Pressing n in the Fortune window shows another fortune.
+" Description: Fortune on demand creates a bottom (by default) horizontal
+"              split window with the result of the unix fortune command.
 "
 " Maintainer:  Yann Thomas-Gérard <inside at gmail dot com>
 " Version:     1.0
@@ -19,6 +13,10 @@ if exists("g:loaded_fortuneod")
 endif
 
 let g:loaded_fortuneod = 1
+
+if !exists("g:fortuneod_botright_split")
+    let g:fortuneod_botright_split = 1
+endif
 
 if !hasmapto('<Plug>FortuneodStart')
     map <unique> <Leader>F <Plug>FortuneodStart
@@ -56,8 +54,10 @@ function s:Start()
 endfunction
 
 function s:CreateWindow(bufName)
+    let l:botright_split = g:fortuneod_botright_split ? "botright" : "topleft"
+
     " Open a split window
-    exec 'topleft split ' . a:bufName
+    exec l:botright_split . ' split ' . a:bufName
     setlocal noswapfile
     setlocal buftype=nofile
     setlocal bufhidden=wipe
