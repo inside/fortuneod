@@ -79,7 +79,7 @@ function s:GetContent()
             let l:content += ["You should probably install it with the command:", ""]
             let l:content += ["$ aptitude install fortune"]
         else
-            let l:content += ["Ther was an error (" . v:shell_error . ") while executing the fortune unix command."]
+            let l:content += ["There was an error (" . v:shell_error . ") while executing the fortune unix command."]
         endif
     endif
 
