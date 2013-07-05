@@ -21,12 +21,12 @@ To create your prefered map, use for example: `nnoremap ,f
 
 ## Configuration
 
-* `g:fortuneod_botright_split 0|1` Default value is 1. Fortuneod opens a bottom
-  horizontal split. If you want a top horizontal split set
+* `g:fortuneod_botright_split 0|1` Default value is 1. Fortuneod opens a
+  bottom horizontal split. If you want a top horizontal split set
   `g:fortuneod_botright_split = 0` in your .vimrc.
 
-* `g:fortuneod_map_keys 0|1` Default value is 1. To disable all mapping, set it
-  to 0.
+* `g:fortuneod_map_keys 0|1` Default value is 1. To disable all mapping, set
+  it to 0.
 
 ## Commands
 
