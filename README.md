@@ -14,18 +14,18 @@ system: `# aptitude install fortune`
 ## Mappings
 
 By default, `<Leader>F` invokes the plugin. You can disable all mappings using
-`let g:fortuneod_map_keys = 0` in your .vimrc. To create your prefered map, use
-for example: `nnoremap ,f <Plug>FortuneodStart`.
+`let g:fortuneod_map_keys = 0` in your .vimrc.
+
+To create your prefered map, use for example: `nnoremap ,f
+<Plug>FortuneodStart`.
 
 ## Configuration
 
 * `g:fortuneod_botright_split 0|1`
-
 Default value is 1. Fortuneod opens a bottom horizontal split. If you want a
 top horizontal split set `g:fortuneod_botright_split = 0` in your .vimrc.
 
 * `g:fortuneod_map_keys 0|1`
-
 Default value is 1. To disable all mapping, set it to 0.
 
 ## Commands
