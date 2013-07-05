@@ -18,8 +18,12 @@ if !exists("g:fortuneod_botright_split")
     let g:fortuneod_botright_split = 1
 endif
 
-if !hasmapto('<Plug>FortuneodStart')
-    nmap <Leader>F <Plug>FortuneodStart
+if !exists("g:fortuneod_map_keys")
+    let g:fortuneod_map_keys = 1
+endif
+
+if g:fortuneod_map_keys
+    nmap <leader>F <Plug>FortuneodStart
 endif
 
 nnoremap <script> <Plug>FortuneodStart <SID>Start

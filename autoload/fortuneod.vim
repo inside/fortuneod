@@ -52,7 +52,7 @@ function fortuneod#GetContent() " {{{
         if v:shell_error == 127
             let l:content += ["The fortune command was not found."]
             let l:content += ["You should probably install it with the command:", ""]
-            let l:content += ["$ aptitude install fortune"]
+            let l:content += ["# aptitude install fortune"]
         else
             let l:content += ["There was an error (" . v:shell_error . ") "]
             let l:content += ["while executing the fortune unix command."]
