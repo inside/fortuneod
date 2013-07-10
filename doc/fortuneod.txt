@@ -19,9 +19,9 @@ CONTENTS                                                   *FortuneodContents*
 1. Introduction                                        *FortuneodIntroduction*
 
 Fortune on demand creates by default a bottom horizontal split window with the
-result of the unix fortune command. The `fortune` command must be available to
+result of the unix fortune command. The fortune command must be available to
 run this plugin. If you don't have it, try something like this on a unix
-system: `# aptitude install fortune`.
+system: # aptitude install fortune.
 
 
 ==============================================================================
